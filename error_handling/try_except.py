@@ -21,7 +21,7 @@ try:
     elif int(num_cats) < 0:
         # technically also a ValueError that could be raised a la:
         # raise ValueError
-        print("Strange choice of negative numbers, you got there ")
+        print('Strange choice of negative numbers, you got there ')
     else:
         print('Zero cats is also not that many cats ')
 except ValueError:
