@@ -3,7 +3,9 @@
 import pprint
 
 # message = 'It was a bright cold day in April and the clocks were striking thirteen.'
-message = '''Your bones don't break, mine do. That's clear. 
+# multiline string escapes characters automatically while retaining formatting
+message = '''
+Your bones don't break, mine do. That's clear. 
 Your cells react to bacteria and viruses differently than mine. You don't get sick, I do. That's also clear. 
 But for some reason, you and I react the exact same way to water. 
 We swallow it too fast, we choke. 
