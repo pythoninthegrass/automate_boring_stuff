@@ -68,3 +68,10 @@ spam.replace('e', 'XYZ')
 # import pyperclip
 # pyperclip.copy('Hello!!!')
 # pyperclip.paste()
+
+# string interpolation w/conversion specifiers
+name = 'Alice'
+place = 'Main St'
+time = '6pm'
+food = 'Cadbury mini eggs'
+'Hello %s, you\'re invited to a party at %s at %s. Please bring %s.' % (name, place, time, food)
