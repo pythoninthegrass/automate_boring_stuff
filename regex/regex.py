@@ -99,7 +99,7 @@ num_regex.search("My numbers are 415-555-1234, 555-4242, and 212-555-0000")
 # ha_regex = re.compile(r'(Ha){3,}')                        # 3 min, unbounded max
 # ha_regex = re.compile(r'(Ha){,5}')                        # unbounded min, 5 max
 ha_regex = re.compile(r'(Ha){3,5}')
-ha_regex.search("He said 'HaHaHaHaHa'")                      # matches between 3 - 5 instances; caps at 5 Ha's
+ha_regex.search("He said 'HaHaHaHaHa'")                     # matches between 3 - 5 instances; caps at 5 Ha's
 
 dig_regex = re.compile(r'(\d){3,5}')                        # greedy match: longest string possible        # 12345
 dig_regex = re.compile(r'(\d){3,5}?')                       # non-greedy match: smallest string possible   # 123
