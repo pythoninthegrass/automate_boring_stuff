@@ -35,7 +35,23 @@ for i in range(len(msg)):
 if not found_number:
     print('The cake is a lie.')
 
+# digit matching
 num_regex = re.compile(r'\d\d\d-\d\d\d-\d\d\d\d')           # raw string (avoid escapes) - match digits delimited by dashes
 # mo = num_regex.search(msg)                                # returns first match object searching message via regex
 # print(mo.group())                                         # search method followed by group method
 print(num_regex.findall(msg))                               # returns first match object searching message via regex
+
+# groups
+num_regex = re.compile(r'(\d\d\d)-(\d\d\d)-(\d\d\d\d)')
+mo = num_regex.search(msg)
+mo.group(1)
+
+# escape parentheses
+num_regex = re.compile(r'\(\d\d\d\) (\d\d\d)-(\d\d\d\d)')
+mo = num_regex.search('My number is (415) 555-4242')
+mo.group(0)
+
+# multiple queries
+bat_regex = re.compile(r'Bat(man|mobile|copter|bat)')
+mo = bat_regex.search('Batmobile lost a wheel')
+mo.group()                                                  # error handling: IndexError and NoneType
