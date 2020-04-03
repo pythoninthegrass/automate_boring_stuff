@@ -85,13 +85,13 @@ mo.group()
 ha_regex = re.compile(r'(Ha){3}')
 ha_regex.search("He said 'HaHaHa'")
 
-# exact match after: 
+# exact match after:
 # optional `?` area code
 # phone number sans area code
 # optional `,` `?` comma delimiter (list)
 # optional `.` `?` whitespace/chars
 # or one or more `.` `+` whitespace/chars
-# occurring exactly 3 times `{3}` 
+# occurring exactly 3 times `{3}`
 num_regex = re.compile(r'((\d\d\d-)?\d\d\d-\d\d\d\d(,)?(.)?|(.)+){3}')
 num_regex.search("My numbers are 415-555-1234, 555-4242, and 212-555-0000")
 
@@ -104,3 +104,27 @@ ha_regex.search("He said 'HaHaHaHaHa'")                     # matches between 3 
 dig_regex = re.compile(r'(\d){3,5}')                        # greedy match: longest string possible        # 12345
 dig_regex = re.compile(r'(\d){3,5}?')                       # non-greedy match: smallest string possible   # 123
 dig_regex.search("1234567890")
+
+# findall
+num_regex = re.compile(r'\d\d\d-\d\d\d-\d\d\d\d')           # list of strings: zero or one groups
+num_regex = re.compile(r'(\d\d\d)-(\d\d\d-\d\d\d\d)')       # tuples of strings: two or more groups
+num_regex.findall("My numbers are 415-555-1234, 555-4242, and 212-555-0000")
+
+# character classes
+# \d - digits
+# \D - non-digits
+# \w - any letter, digit, or underscore (word chars)
+# \W - inverse ^^
+# \s - space, tab, or newline (space chars)
+# \S - inverse ^^
+# + - one or more occurrences
+
+lyrics = '12 drummers drumming, 11 pipers piping, 10 lords a leaping, 9 ladies dancing, 8 maids a milking, 7 swans a swimming, 6 geese a laying, 5 golden rings, 4 calling birds, 3 french hens, 2 turtle doves, 1 partridge in a pear tree'
+xmas_regex = re.compile(r'\d+\s\w+')
+xmas_regex.findall(lyrics)
+
+# custom character classes
+vowel_regex = re.compile(r'[AEIOUaeiou]')                   # match all vowels
+double_vowel_regex = re.compile(r'[AEIOUaeiou]{2}')         # match repeated vowels
+consonants_regex = re.compile(r'[^AEIOUaeiou]')             # negative matching (inverse) (dragnet for punctuation and digits)
+consonants_regex.findall('Robocop eats baby food.')
