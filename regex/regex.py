@@ -128,3 +128,49 @@ vowel_regex = re.compile(r'[AEIOUaeiou]')                   # match all vowels
 double_vowel_regex = re.compile(r'[AEIOUaeiou]{2}')         # match repeated vowels
 consonants_regex = re.compile(r'[^AEIOUaeiou]')             # negative matching (inverse) (dragnet for punctuation and digits)
 consonants_regex.findall('Robocop eats baby food.')
+
+# starts with
+begins_regex = re.compile(r'^Hello')
+begins_regex.search('Hello there!')
+
+# ends with
+ends_regex = re.compile(r'world!$')
+ends_regex.search('Hello world!')
+
+# match all digits
+all_regex = re.compile(r'^\d+$')
+all_regex.search('123456789')
+
+# wildcard - match anything but newline `\n`
+at_regex = re.compile(r'[Aa]t.')                            # match 'At ' (with whitespace)
+at_regex = re.compile(r'[Aa]t.{1,2}')                       # match 'At t'
+at_regex.findall('At the Drive-In')
+
+# dot-star - match any character zero or more times
+'First Name: Al Last Name: Sweigart'.find(':') + 2          # get index of first name
+'First Name: Al Last Name: Sweigart'[12:]                   # start arithmetic for last name string slicing
+name_regex = re.compile(r'First Name: (.*) Last Name: (.*)')# match any char `.` zero or more times `*` after 'First/Last Name:'
+name_regex.findall(r'First Name: Al Last Name: Sweigart')   # '[Al Sweigart']
+
+# dot-star non-greedy
+serve = '<To serve humans> for dinner.>'
+nongreedy = re.compile(r'<(.*?)>')                          # find anything within open/closed chevrons - stop after first match
+nongreedy.findall(serve)                                    # ['To serve humans']
+
+# dot-star greedy
+serve = '<To serve humans> for dinner.>'
+greedy = re.compile(r'<(.*)>')                              # find anything within open/closed chevrons - match all instances
+greedy.findall(serve)                                       # ['To serve humans> for dinner.']
+
+# robocop prime directive matching w/greedy dot-star
+prime = 'Serve the public trust.\nProtect the innocent.\nUphold the law.'
+dot_star = re.compile(r'.*')
+dot_star.search(prime)                                      # < ... match='Serve the public trust.'>
+dot_star = re.compile(r'.*', re.DOTALL)                     # force matching newline chars
+dot_star.search(prime)                                      # < ... match='Serve the public trust.\nProtect the innocent.\nU>
+
+# case insensitive
+vowel_regex = re.compile(r'[aeiou]')                        # only match lowercase vowels
+vowel_regex.findall('Al, why u like robocop so much?')      # ['u', 'i', 'e', 'o', 'o', 'o', 'o', 'u']
+vowel_regex = re.compile(r'[aeiou]', re.IGNORECASE)         # match lowercase vowel, ignore case (i.e., [AEIOUaeiou])
+vowel_regex.findall('Al, why u like robocop so much?')      # ['A', 'u', 'i', 'e', 'o', 'o', 'o', 'o', 'u']
