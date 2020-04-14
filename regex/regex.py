@@ -108,7 +108,9 @@ dig_regex.search("1234567890")
 # findall
 num_regex = re.compile(r'\d\d\d-\d\d\d-\d\d\d\d')           # list of strings: zero or one groups
 num_regex = re.compile(r'(\d\d\d)-(\d\d\d-\d\d\d\d)')       # tuples of strings: two or more groups
-num_regex.findall("My numbers are 415-555-1234, 555-4242, and 212-555-0000")
+num_regex.findall('My numbers are 415-555-1234, 555-4242, '
+                'and 212-555-0000'
+                )
 
 # character classes
 # \d - digits
@@ -119,7 +121,13 @@ num_regex.findall("My numbers are 415-555-1234, 555-4242, and 212-555-0000")
 # \S - inverse ^^
 # + - one or more occurrences
 
-lyrics = '12 drummers drumming, 11 pipers piping, 10 lords a leaping, 9 ladies dancing, 8 maids a milking, 7 swans a swimming, 6 geese a laying, 5 golden rings, 4 calling birds, 3 french hens, 2 turtle doves, 1 partridge in a pear tree'
+lyrics = '''
+12 drummers drumming, 11 pipers piping,
+10 lords a leaping, 9 ladies dancing, 8 maids a milking,
+7 swans a swimming, 6 geese a laying, 5 golden rings,
+4 calling birds, 3 french hens, 2 turtle doves, 1 partridge
+in a pear tree
+'''
 xmas_regex = re.compile(r'\d+\s\w+')
 xmas_regex.findall(lyrics)
 
