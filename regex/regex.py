@@ -174,3 +174,24 @@ vowel_regex = re.compile(r'[aeiou]')                        # only match lowerca
 vowel_regex.findall('Al, why u like robocop so much?')      # ['u', 'i', 'e', 'o', 'o', 'o', 'o', 'u']
 vowel_regex = re.compile(r'[aeiou]', re.IGNORECASE)         # match lowercase vowel, ignore case (i.e., [AEIOUaeiou])
 vowel_regex.findall('Al, why u like robocop so much?')      # ['A', 'u', 'i', 'e', 'o', 'o', 'o', 'o', 'u']
+
+# sub method
+names_regex = re.compile(r'Agent \w+')                                          # one or more word chars
+names_regex.findall('Agent Alice gave the secrets to Agent Bob')                # ['Agent Alice', 'Agent Bob']
+names_regex.sub('REDACTED', 'Agent Alice gave the secrets to Agent Bob')        # 'REDACTED gave the secrets to REDACTED'
+names_regex = re.compile(r'Agent (\w)\w*')                                      # one word character followed by zero or more letters
+names_regex.findall('Agent Alice gave the secrets to Agent Bob')                # ['A', 'B']
+names_regex.sub(r'Agent \1****', 'Agent Alice gave the secrets to Agent Bob')   # 'Agent A**** gave the secrets to Agent B****'
+
+# verbose mode
+import re
+num_regex = re.compile(r'''
+(\d\d\d)|                                                   # area code w/o parens, w/dash
+(\(\d\d\d\))                                                # area code w/parens, w/o dash
+-                                                           # first dash
+\d\d\d                                                      # first 3 digits
+-                                                           # second dash
+\d\d\d\d                                                    # last 4 digits
+\sx\d{2,4}                                                  # ext (e.g., x1234)
+''', re.IGNORECASE | re.DOTALL | re.VERBOSE)                # bitwise OR operator: `|` to chain arguments (DOTALL == everything incl. newline)
+num_regex.search("My numbers are 415-555-1234, 555-4242, and 212-555-0000 x1234")
