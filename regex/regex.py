@@ -177,11 +177,19 @@ vowel_regex.findall('Al, why u like robocop so much?')      # ['A', 'u', 'i', 'e
 
 # sub method
 names_regex = re.compile(r'Agent \w+')                                          # one or more word chars
-names_regex.findall('Agent Alice gave the secrets to Agent Bob')                # ['Agent Alice', 'Agent Bob']
-names_regex.sub('REDACTED', 'Agent Alice gave the secrets to Agent Bob')        # 'REDACTED gave the secrets to REDACTED'
-names_regex = re.compile(r'Agent (\w)\w*')                                      # one word character followed by zero or more letters
-names_regex.findall('Agent Alice gave the secrets to Agent Bob')                # ['A', 'B']
-names_regex.sub(r'Agent \1****', 'Agent Alice gave the secrets to Agent Bob')   # 'Agent A**** gave the secrets to Agent B****'
+names_regex.findall('Agent Alice gave '                     # ['Agent Alice', 'Agent Bob']
+                    'the secrets to Agent Bob'
+                    )
+names_regex.sub('REDACTED', 'Agent Alice gave '             # 'REDACTED gave the secrets to REDACTED'
+                'the secrets to Agent Bob'
+                )
+names_regex = re.compile(r'Agent (\w)\w*')                  # one word character followed by zero or more letters
+names_regex.findall('Agent Alice gave '                     # ['A', 'B']
+                    'the secrets to Agent Bob'
+                    )
+names_regex.sub(r'Agent \1****', 'Agent Alice gave '        # 'Agent A**** gave the secrets to Agent B****'
+                'the secrets to Agent Bob'
+                )
 
 # verbose mode
 num_regex = re.compile(r'''
