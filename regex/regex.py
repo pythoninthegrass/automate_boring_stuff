@@ -184,7 +184,6 @@ names_regex.findall('Agent Alice gave the secrets to Agent Bob')                
 names_regex.sub(r'Agent \1****', 'Agent Alice gave the secrets to Agent Bob')   # 'Agent A**** gave the secrets to Agent B****'
 
 # verbose mode
-import re
 num_regex = re.compile(r'''
 (\d\d\d)|                                                   # area code w/o parens, w/dash
 (\(\d\d\d\))                                                # area code w/parens, w/o dash
