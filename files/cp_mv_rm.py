@@ -50,3 +50,28 @@ for fn in os.listdir('../../Downloads/resources'):
     if fn.endswith('.txt'):
         print(fn)
         # os.unlink(fn)
+
+# tree (walk directory)
+os.getcwd()
+for dir_name, sub_dirs, fn in os.walk('.'):
+    # OG (str cat)
+    # print('The folder is ' + dir_name)
+    # print('The subfolders in ' + dir_name + ' are: ' + str(sub_dirs))
+    # print('The filenames in ' + dir_name + ' are: ' + str(fn))
+    # print()
+
+    # MYNE (f-strings)
+    print(f'The folder is {dir_name}')
+    print(f'The subfolders in {dir_name} are: {sub_dirs}')
+    print(f'The filenames in {dir_name} are: {fn}\n')
+
+    # find . -name "fish" -type d -exec rm {} \;
+    # for sub_dir in sub_dirs:
+    #     if 'fish' in sub_dir:
+    #         os.rmdir(sub_dir)
+    #         print('rm -rf on' + sub_dir)
+
+    # find . -name "*.py" -type f -exec cp {}{,.bak} \;
+    # for f in fn:
+    #     if f.endswith('.py'):
+    #         shutil.copy(os.join(dir_name, f), os.join(dir_name, f + '.bak'))
