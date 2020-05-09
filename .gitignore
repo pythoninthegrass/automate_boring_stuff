@@ -30,6 +30,9 @@ Temporary Items
 # VSCode
 .vscode
 
+# Logs
+error.log
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
