@@ -31,8 +31,10 @@ def get_nspress_price(product_url):
     soup = bs4.BeautifulSoup(res.text, 'html.parser')
     elems = soup.select('div.form-type-radio:nth-child(1) > label:nth-child(1)')    # Book + eBook $39.95
     sanitized_elems = elems[0].text.strip()
+
     price_regex = re.compile(r'(\$\d\d\.\d\d?)')                                    # non-greedy to match once
     dollar_dollar = (price_regex.search(sanitized_elems).group(1))                  # search to capture string that matched
+
     return dollar_dollar
 
 price = get_nspress_price('https://nostarch.com/automatestuff2')
