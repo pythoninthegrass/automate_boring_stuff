@@ -33,6 +33,12 @@ Temporary Items
 # Logs
 error.log
 
+# Selenium
+geckodriver.log
+cookies.pkl
+selenium/
+logs/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
