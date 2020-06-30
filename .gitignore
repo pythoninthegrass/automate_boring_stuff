@@ -6,8 +6,7 @@
 .LSOverride
 ~$*.*
 combinedminutes.pdf
-demo2.docx
-demo3.docx
+demo*.docx
 
 # Icon must end with two \r
 Icon
