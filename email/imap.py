@@ -4,7 +4,6 @@ import pyzmail
 from datetime import date
 from getpass import getpass
 from imapclient import IMAPClient
-from pprint import pprint
 
 # init
 conn = IMAPClient('imap.gmail.com', ssl=True, use_uid=True)
