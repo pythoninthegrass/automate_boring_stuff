@@ -3,7 +3,17 @@
 import pprint
 
 # tic-tac-toe board (dictionary)
-the_board = {'top-L': ' ', 'top-M': ' ', 'top-R': ' ', 'mid-L': ' ', 'mid-M': ' ', 'mid-R': ' ', 'low-L': ' ', 'low-M': ' ', 'low-R': ' '}
+the_board = {
+    'top-L': ' ',
+    'top-M': ' ',
+    'top-R': ' ',
+    'mid-L': ' ',
+    'mid-M': ' ',
+    'mid-R': ' ',
+    'low-L': ' ',
+    'low-M': ' ',
+    'low-R': ' '
+}
 # pprint.pprint(the_board)
 
 the_board['low-R'] = 'X'
