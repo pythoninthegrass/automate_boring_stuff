@@ -1,75 +1,29 @@
-[tool.poetry]
+[project]
 name = "automate-boring-stuff"
 version = "1.0.0"
 description = "Loosely follows the Automate the Boring Stuff Udemy course by Al Sweigart"
-authors = ["pythoninthegrass <4097471+pythoninthegrass@users.noreply.github.com>"]
-license = "Unlicense"
+authors = [{ name = "pythoninthegrass", email = "4097471+pythoninthegrass@users.noreply.github.com" }]
+requires-python = ">=3.11,<3.12"
 readme = "README.md"
+license = "Unlicense"
 
-[tool.poetry.dependencies]
-python = "^3.11"
+dependencies = []
 
-[tool.poetry.group.dev.dependencies]
-ipython = "^8.4.0"
-pytest = "^7.1.3"
-pytest-asyncio = "^0.21.1"
-pytest-cov = "^4.0.0"
-pytest-datafiles = "^3.0.0"
-pytest-xdist = "^3.3.1"
-rich = "^13.4.2"
-ruff = "^0.1.1"
-
-[tool.ruff]
-# Enable pycodestyle (`E`) and Pyflakes (`F`) codes by default.
-select = ["E", "F"]
-ignore = []
-# Skip unused variable rules
-extend-ignore = ["D203", "E203", "E251", "E266", "E401", "E402", "E501", "F401", "F403"]
-
-# Allow autofix for all enabled rules (when `--fix`) is provided.
-fixable = ["A", "B", "C", "D", "E", "F", "G", "I", "N", "Q", "S", "T", "W", "ANN", "ARG", "BLE", "COM", "DJ", "DTZ", "EM", "ERA", "EXE", "FBT", "ICN", "INP", "ISC", "NPY", "PD", "PGH", "PIE", "PL", "PT", "PTH", "PYI", "RET", "RSE", "RUF", "SIM", "SLF", "TCH", "TID", "TRY", "UP", "YTT"]
-unfixable = []
-
-# Exclude a variety of commonly ignored directories.
-exclude = [
-    ".bzr",
-    ".direnv",
-    "dist",
-    ".eggs",
-    ".git",
-    ".git-rewrite",
-    ".hg",
-    ".mypy_cache",
-    ".nox",
-    ".pants.d",
-    "__pycache__",
-    ".pytype",
-    ".ruff_cache",
-    ".svn",
-    ".tox",
-    ".venv",
-    "__pypackages__",
-    "_build",
-    "buck-out",
-    "build",
-    "dist",
-    "node_modules",
-    "venv",
+[project.optional-dependencies]
+dev = [
+    "ipython>=8.4.0,<9",
+    "rich>=13.4.2,<14",
+    "ruff>=0.12.11",
 ]
 
-# Black (default: 88)
-line-length = 130
-
-# Allow unused variables when underscore-prefixed.
-dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
-
-# Assume Python 3.11.
-target-version = "py311"
-
-[tool.ruff.mccabe]
-# Unlike Flake8, default to a complexity level of 10.
-max-complexity = 10
+test = [
+    "pytest>=7.1.3,<8",
+    "pytest-asyncio>=0.21.1,<0.22",
+    "pytest-cov>=4.0.0,<5",
+    "pytest-datafiles>=3.0.0,<4",
+    "pytest-xdist>=3.3.1,<4",
+]
 
 [build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+requires = ["hatchling"]
+build-backend = "hatchling.build"
