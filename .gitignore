@@ -1,4 +1,5 @@
-# SOURCE: https://github.com/github/gitignore/blob/master/Global/macOS.gitignore
+# ETC
+
 
 # General
 .DS_Store
@@ -186,3 +187,7 @@ cython_debug/
 # static files generated from Django application using `collectstatic`
 media
 static
+
+# INCLUDE
+!**/.gitkeep
+!**/*.example
