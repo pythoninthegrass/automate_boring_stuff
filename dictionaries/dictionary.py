@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 
 # dictionaries are unordered, unlike lists
 my_cat = {'size': 'fat', 'color': 'gray', 'disposition': 'loud'}

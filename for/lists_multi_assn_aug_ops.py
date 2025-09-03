@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 
 # supplies = ['pens', 'staples', 'flamethrowers', 'binders']
 # for i in range(len(supplies)):

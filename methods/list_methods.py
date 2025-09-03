@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 
 spam = ['hello', 'hi', 'howdy', 'heyas']
 # list.method('string')
@@ -10,7 +10,7 @@ spam.append('moose')
 spam.insert(1, 'chicken')
 # # .remove: removes first instance anywhere in list; not tied to index like del
 # # e.g., del spam[0]
-spam.remove('cat') 
+spam.remove('cat')
 print(spam)
 
 # spam = [2, 5, 3.14, 1, -7]
@@ -24,7 +24,7 @@ spam = [0, 1, 2, 3, 4, 5]
 cheese = spam # assign referenced list
 cheese[1] = 'Hello!'
 print(cheese)   # identical output
-print(spam)     # to this 
+print(spam)     # to this
 
 # changes made to list in function affect list outside of function
 def eggs(cheese):

@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 
 # SOURCE
 # http://echrislynch.com/2018/07/13/turning-a-pdf-into-a-pandas-dataframe/

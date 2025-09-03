@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 
 # SOURCES:
 # https://www.udemy.com/course/automate/learn/lecture/3470622#overview
