@@ -1,0 +1,1565 @@
+========================
+CODE SNIPPETS
+========================
+TITLE: Create Example File and Folder
+DESCRIPTION: This code snippet demonstrates how to create a sample directory named 'spam' and a text file named 'file1.txt' within it using Python's pathlib module. This setup is used for subsequent file operation examples.
+
+SOURCE: https://automatetheboringstuff.com/3e/chapter11
+
+LANGUAGE: Python
+CODE:
+```
+from pathlib import Path
+h = Path.home()
+(h / 'spam').mkdir(exist_ok=True)
+with open(h / 'spam/file1.txt', 'w', encoding='utf-8') as file:
+    file.write('Hello')
+
+```
+
+----------------------------------------
+
+TITLE: Install automateboringstuff3 Package
+DESCRIPTION: Installs the 'automateboringstuff3' package, which includes most of the libraries needed for the book. This command is executed via pip.
+
+SOURCE: https://automatetheboringstuff.com/3e/appendixa
+
+LANGUAGE: Shell
+CODE:
+```
+C:\Users\al>\n**python –m pip install automateboringstuff3**
+```
+
+LANGUAGE: Shell
+CODE:
+```
+al@Als-MacBook-Pro ~ % **python3 –m pip install automateboringstuff3**
+```
+
+----------------------------------------
+
+TITLE: Install pyttsx3 package
+DESCRIPTION: Installs the pyttsx3 library, used for text-to-speech functionality, via pip. Ensure you have Python and pip installed.
+
+SOURCE: https://automatetheboringstuff.com/3e/chapter24
+
+LANGUAGE: shell
+CODE:
+```
+pip install pyttsx3
+```
+
+----------------------------------------
+
+TITLE: Python: Get Speech Engine Properties
+DESCRIPTION: This example shows how to retrieve the current settings for the speech engine, specifically volume, speaking rate, and available voices. It uses the getProperty method of the pyttsx3 Engine object.
+
+SOURCE: https://automatetheboringstuff.com/3e/chapter24
+
+LANGUAGE: Python
+CODE:
+```
+import pyttsx3
+engine = pyttsx3.init()
+print(engine.getProperty('volume'))
+print(engine.getProperty('rate'))
+print(engine.getProperty('voices'))
+```
+
+----------------------------------------
+
+TITLE: Running Python Scripts from Terminal
+DESCRIPTION: This section provides examples of how to execute Python scripts from the terminal on different operating systems. It shows the commands to start the Python interpreter and run a script using its file path.
+
+SOURCE: https://automatetheboringstuff.com/3e/chapter12
+
+LANGUAGE: shell
+CODE:
+```
+# On Windows:
+python C:\Users\al\Scripts\yourScript.py
+
+# On macOS and Linux:
+python3 ~/Scripts/yourScript.py
+
+# Relative path example (if in the same directory):
+python yourScript.py
+```
+
+----------------------------------------
+
+TITLE: Running Mu Editor on Ubuntu
+DESCRIPTION: This snippet shows how to start the Mu editor on Ubuntu Linux by using the terminal. It assumes Python 3 is installed and accessible.
+
+SOURCE: https://automatetheboringstuff.com/3e/chapter0
+
+LANGUAGE: Shell
+CODE:
+```
+python3 –m mu
+```
+
+----------------------------------------
+
+TITLE: Install PyTorch for GPU Acceleration
+DESCRIPTION: Installs PyTorch, torchvision, and torchaudio with GPU support (CUDA 11.8) for faster speech recognition with the Whisper package.
+
+SOURCE: https://automatetheboringstuff.com/3e/appendixa
+
+LANGUAGE: Shell
+CODE:
+```
+C:\Users\al>\n**pip install torch torchvision torchaudio --index-url **\n**https://download.pytorch.org/whl/cu118**
+```
+
+----------------------------------------
+
+TITLE: Install Specific Package Versions
+DESCRIPTION: Installs specific versions of Python packages using pip, ensuring compatibility with the book's examples.
+
+SOURCE: https://automatetheboringstuff.com/3e/appendixa
+
+LANGUAGE: Shell
+CODE:
+```
+pip install send2trash==1.8.3
+```
+
+----------------------------------------
+
+TITLE: Python Function Definition and Call Example
+DESCRIPTION: A concise Python example demonstrating function definition and calling. It shows how to define a function 'say_hello_to' with a 'name' parameter and then call it with the argument 'Al'.
+
+SOURCE: https://automatetheboringstuff.com/3e/chapter4
+
+LANGUAGE: Python
+CODE:
+```
+def say_hello_to(name):
+    # Prints three greetings to the name provided
+    print('Good morning, ' + name)
+    print('Good afternoon, ' + name)
+    print('Good evening, ' + name)
+
+say_hello_to('Al')
+```
+
+----------------------------------------
+
+TITLE: Install pytesseract and openai-whisper
+DESCRIPTION: Installs the pytesseract and openai-whisper packages, which are not included in the main 'automateboringstuff3' package. Supports both Windows and macOS/Linux.
+
+SOURCE: https://automatetheboringstuff.com/3e/appendixa
+
+LANGUAGE: Shell
+CODE:
+```
+C:\Users\al>\n**pip install pytesseract==0.3.10**
+C:\Users\al>\n**pip install openai-whisper==20231117**
+```
+
+LANGUAGE: Shell
+CODE:
+```
+al@Als-MacBook-Pro ~ % **pip3 install pytesseract==0.3.10**
+al@Als-MacBook-Pro ~ % **pip3 install openai-whisper==20231117**
+```
+
+----------------------------------------
+
+TITLE: Install espeak on Linux
+DESCRIPTION: Installs the eSpeak speech synthesizer on Debian-based Linux systems, a dependency for pyttsx3 on Linux. Requires sudo privileges.
+
+SOURCE: https://automatetheboringstuff.com/3e/chapter24
+
+LANGUAGE: shell
+CODE:
+```
+sudo apt install espeak
+```
+
+----------------------------------------
+
+TITLE: Install Playwright Browsers
+DESCRIPTION: Installs the necessary browsers for the Playwright package after the main package has been installed.
+
+SOURCE: https://automatetheboringstuff.com/3e/appendixa
+
+LANGUAGE: Shell
+CODE:
+```
+playwright install
+```
+
+----------------------------------------
+
+TITLE: Python Regex: Match Strings Starting with 'Hello'
+DESCRIPTION: Demonstrates using the '^' anchor to ensure a regex match occurs at the beginning of a string. This example compiles a pattern to find strings that start with 'Hello'.
+
+SOURCE: https://automatetheboringstuff.com/3e/chapter9
+
+LANGUAGE: Python
+CODE:
+```
+import re
+begins_with_hello = re.compile(r'^Hello')
+begins_with_hello.search('Hello, world!')
+begins_with_hello.search('He said "Hello."') == None
+```
+
+----------------------------------------
+
+TITLE: Install EZSheets using pip
+DESCRIPTION: This command installs the EZSheets library, a third-party tool that simplifies interactions with the Google Sheets API. Ensure you have pip installed and accessible in your environment.
+
+SOURCE: https://automatetheboringstuff.com/3e/chapter15
+
+LANGUAGE: bash
+CODE:
+```
+pip install ezsheets
+```
+
+----------------------------------------
+
+TITLE: Starting IDLE on Ubuntu
+DESCRIPTION: This snippet demonstrates how to launch the IDLE interactive development environment on Ubuntu Linux via the terminal.
+
+SOURCE: https://automatetheboringstuff.com/3e/chapter0
+
+LANGUAGE: Shell
+CODE:
+```
+idle
+```
+
+----------------------------------------
+
+TITLE: Install PyAutoGUI and pyperclip on Linux
+DESCRIPTION: Installs necessary dependencies for PyAutoGUI and pyperclip on Linux systems using apt package manager.
+
+SOURCE: https://automatetheboringstuff.com/3e/appendixa
+
+LANGUAGE: Shell
+CODE:
+```
+sudo apt install python3-tk
+sudo apt install python3-dev
+```
+
+LANGUAGE: Shell
+CODE:
+```
+sudo apt install xclip
+```
+
+----------------------------------------
+
+TITLE: Install Tesseract on Linux
+DESCRIPTION: Installs the Tesseract OCR engine and language packs on Linux using the apt package manager.
+
+SOURCE: https://automatetheboringstuff.com/3e/chapter22
+
+LANGUAGE: bash
+CODE:
+```
+sudo apt install tesseract-ocr
+sudo apt install tesseract-ocr-all
+```
+
+----------------------------------------
+
+TITLE: Initialize XKCD Comic Downloader
+DESCRIPTION: Sets up the initial variables and directory for downloading XKCD comics. It defines the starting URL, creates a directory to store the comics, and sets a maximum number of downloads.
+
+SOURCE: https://automatetheboringstuff.com/3e/chapter13
+
+LANGUAGE: Python
+CODE:
+```
+# downloadXkcdComics.py - Downloads XKCD comics
+
+import requests, os, bs4, time
+
+url = 'https://xkcd.com'  # Starting URL
+os.makedirs('xkcd', exist_ok=True)  # Store comics in ./xkcd
+num_downloads = 0
+MAX_DOWNLOADS = 10
+while not url.endswith('#') and num_downloads < MAX_DOWNLOADS:
+    # TODO: Download the page.
+
+    # TODO: Find the URL of the comic image.
+
+    # TODO: Download the image.
+
+    # TODO: Save the image to ./xkcd.
+
+    # TODO: Get the Prev button's url.
+
+print('Done.')
+
+```
+
+----------------------------------------
+
+TITLE: JSON Data Structure Example
+DESCRIPTION: An example of data formatted as JSON text, showcasing key-value pairs, nested objects, and arrays.
+
+SOURCE: https://automatetheboringstuff.com/3e/chapter18
+
+LANGUAGE: JSON
+CODE:
+```
+{
+  "name": "Alice Doe",
+  "age": 30,
+  "car": null,
+  "programmer": true,
+  "address": {
+    "street": "100 Larkin St.",
+    "city": "San Francisco",
+    "zip": "94102"
+  },
+  "phone": [
+    {
+      "type": "mobile",
+      "number": "415-555-7890"
+    },
+    {
+      "type": "work",
+      "number": "415-555-1234"
+    }
+  ]
+}
+```
+
+----------------------------------------
+
+TITLE: Basic Python 'Hello, world!' in Interactive Shell
+DESCRIPTION: This is a fundamental example of executing a Python command in an interactive shell. It prints the string 'Hello, world!' to the console.
+
+SOURCE: https://automatetheboringstuff.com/3e/chapter0
+
+LANGUAGE: Python
+CODE:
+```
+>>> print('Hello, world!')
+Hello, world!
+```
+
+----------------------------------------
+
+TITLE: Python: Getting User Input with input()
+DESCRIPTION: The input() function waits for the user to type text on the keyboard and press ENTER. It can display a prompt to guide the user. The function call evaluates to a string identical to the user's input.
+
+SOURCE: https://automatetheboringstuff.com/3e/chapter1
+
+LANGUAGE: python
+CODE:
+```
+my_name = input('>')
+print('It is good to meet you, ' + my_name)
+```
+
+LANGUAGE: python
+CODE:
+```
+my_name = input()
+```
+
+----------------------------------------
+
+TITLE: Install a Package using pip
+DESCRIPTION: Installs a specified package from the Python Package Index (PyPI). It's recommended to use 'python -m pip' to ensure the correct Python interpreter is used.
+
+SOURCE: https://automatetheboringstuff.com/3e/chapter12
+
+LANGUAGE: Shell
+CODE:
+```
+C:\Users\al>\n**python –m pip install **package_name**
+```
+
+LANGUAGE: Shell
+CODE:
+```
+**python3 –m pip install automateboringstuff3**
+```
+
+LANGUAGE: Shell
+CODE:
+```
+**python –m pip install automateboringstuff3**
+```
+
+----------------------------------------
+
+TITLE: Install Tesseract on macOS
+DESCRIPTION: Installs the Tesseract OCR engine and language packs on macOS using the Homebrew package manager.
+
+SOURCE: https://automatetheboringstuff.com/3e/chapter22
+
+LANGUAGE: bash
+CODE:
+```
+brew install tesseract
+brew install tesseract-lang
+```
+
+----------------------------------------
+
+TITLE: Install NAPS2 on Linux using Flatpak
+DESCRIPTION: This command shows how to install the NAPS2 application on a Linux system using the Flatpak package manager. It assumes the Flatpak installer file is downloaded and specifies the command to run from the download folder.
+
+SOURCE: https://automatetheboringstuff.com/3e/chapter22
+
+LANGUAGE: Shell
+CODE:
+```
+flatpak install naps2-X.X.X-linux-x64.flatpak
+```
+
+----------------------------------------
+
+TITLE: Get pip Help
+DESCRIPTION: Displays comprehensive help information for pip, including all available commands and options. This is useful for exploring pip's full capabilities.
+
+SOURCE: https://automatetheboringstuff.com/3e/chapter12
+
+LANGUAGE: Shell
+CODE:
+```
+python –m pip --help
+```
+
+----------------------------------------
+
+TITLE: Python Math Operators: Exponentiation Example
+DESCRIPTION: Provides an example of the exponentiation operator (**) in Python, calculating 'two to the power of three'.
+
+SOURCE: https://automatetheboringstuff.com/3e/chapter1
+
+LANGUAGE: Python
+CODE:
+```
+2 ** 3
+```
+
+----------------------------------------
+
+TITLE: Get Installed PyTesseract Languages
+DESCRIPTION: This code snippet demonstrates how to retrieve a list of all installed language packs recognized by PyTesseract. This is useful for verifying language pack installations and understanding available language codes.
+
+SOURCE: https://automatetheboringstuff.com/3e/chapter22
+
+LANGUAGE: Python
+CODE:
+```
+import pytesseract as tess
+print(tess.get_languages())
+```
+
+----------------------------------------
+
+TITLE: Python Regex: Match Words Starting with 'cat'
+DESCRIPTION: Explains and demonstrates the use of '\b' for word boundaries to match whole words. This example finds all occurrences of words starting with 'cat'.
+
+SOURCE: https://automatetheboringstuff.com/3e/chapter9
+
+LANGUAGE: Python
+CODE:
+```
+import re
+pattern = re.compile(r'\bcat.*?\b')
+pattern.findall('The cat found a catapult catalog in the catacombs.')
+```
+
+----------------------------------------
+
+TITLE: Initialize Stopwatch Program in Python
+DESCRIPTION: Sets up a basic stopwatch program in Python. It imports the `time` module, displays instructions, records the start time, and initializes lap tracking variables.
+
+SOURCE: https://automatetheboringstuff.com/3e/chapter19
+
+LANGUAGE: Python
+CODE:
+```
+# A simple stopwatch program
+import time
+
+# Display the program's instructions.
+print('Press ENTER to begin and to mark laps. Ctrl-C quits.')
+input()  # Press Enter to begin.
+print('Started.')
+start_time = time.time()  # Get the first lap's start time.
+last_time = start_time
+lap_number = 1
+
+# TODO: Start tracking the lap times.
+
+```
+
+----------------------------------------
+
+TITLE: Python Initialization and Loop Structure
+DESCRIPTION: Demonstrates the initial setup of variables and the main infinite loop structure for the zigzag animation. It includes importing necessary modules and setting initial indentation parameters.
+
+SOURCE: https://automatetheboringstuff.com/3e/chapter4
+
+LANGUAGE: python
+CODE:
+```
+import time, sys
+indent = 0 # How many spaces to indent
+indent_increasing = True  # Whether the indentation is increasing or not
+```
+
+----------------------------------------
+
+TITLE: Install pip on Ubuntu/Debian
+DESCRIPTION: Installs the pip package manager for Python 3 on Ubuntu or Debian-based Linux distributions using the apt package manager.
+
+SOURCE: https://automatetheboringstuff.com/3e/appendixa
+
+LANGUAGE: Bash
+CODE:
+```
+sudo apt install python3-pip
+```
+
+----------------------------------------
+
+TITLE: Navigate to pip scripts directory on Linux
+DESCRIPTION: Changes the current directory in the Linux terminal to the '.local/bin' directory in the user's home folder, where the pip executable is typically installed.
+
+SOURCE: https://automatetheboringstuff.com/3e/appendixa
+
+LANGUAGE: Bash
+CODE:
+```
+cd /home/**your_username**/.local/bin/
+```
+
+----------------------------------------
+
+TITLE: Python Function Execution Flow Example
+DESCRIPTION: Illustrates the output generated by calling the 'hello' Python function multiple times within a script, showing the sequence of printed greetings and other print statements.
+
+SOURCE: https://automatetheboringstuff.com/3e/chapter4
+
+LANGUAGE: Python
+CODE:
+```
+Good morning!
+Good afternoon!
+Good evening!
+Good morning!
+Good afternoon!
+Good evening!
+ONE MORE TIME!
+Good morning!
+Good afternoon!
+Good evening!
+
+```
+
+----------------------------------------
+
+TITLE: Install a Specific Package Version with pip
+DESCRIPTION: Installs a specific version of a package from PyPI. This is useful for maintaining compatibility with older projects or specific requirements.
+
+SOURCE: https://automatetheboringstuff.com/3e/chapter12
+
+LANGUAGE: Shell
+CODE:
+```
+python –m pip install package_name==1.17.4
+```
+
+----------------------------------------
+
+TITLE: Python String split() Method Examples
+DESCRIPTION: Illustrates the `split()` method for breaking strings into lists, both with default whitespace splitting and with a specified delimiter.
+
+SOURCE: https://automatetheboringstuff.com/3e/chapter8
+
+LANGUAGE: Python
+CODE:
+```
+>>> 'My name is Simon'.split()
+['My', 'name', 'is', 'Simon']
+```
+
+LANGUAGE: Python
+CODE:
+```
+>>> 'MyABCnameABCisABCSimon'.split('ABC')
+['My', 'name', 'is', 'Simon']
+```
+
+LANGUAGE: Python
+CODE:
+```
+>>> 'My name is Simon'.split('m')
+['My na', 'e is Si', 'on']
+```
+
+----------------------------------------
+
+TITLE: Getting Help for Commands
+DESCRIPTION: Describes how to access help documentation for commands. On Windows, this is typically done with '/?', while on macOS and Linux, '--help' is used to display available command line arguments and their usage.
+
+SOURCE: https://automatetheboringstuff.com/3e/chapter12
+
+LANGUAGE: Shell
+CODE:
+```
+command /?
+command --help
+```
+
+----------------------------------------
+
+TITLE: Extract Video Metadata using yt-dlp without Downloading
+DESCRIPTION: This example demonstrates how to use yt-dlp to extract only the metadata of a video without downloading the actual video file. It configures the YoutubeDL object to skip the download and then uses `extract_info` to get the video's details, which are then sanitized and printed.
+
+SOURCE: https://automatetheboringstuff.com/3e/chapter24
+
+LANGUAGE: Python
+CODE:
+```
+import yt_dlp, json
+video_url = 'https://www.youtube.com/watch?v=kSrnLbioN6w'
+options = {
+    'quiet': True,
+    'no_warnings': True,
+  'skip_download': True,
+}
+with yt_dlp.YoutubeDL(options) as ydl:
+  info = ydl.extract_info(video_url)
+  json_info = ydl.sanitize_info(info)
+  print('TITLE:', json_info['title'])
+  print('KEYS:', json_info.keys())
+  with open('metadata.json', 'w', encoding='utf-8') as json_file:
+      json_file.write(json.dumps(json_info))
+```
+
+----------------------------------------
+
+TITLE: Start and Navigate Firefox Browser with Selenium
+DESCRIPTION: This snippet demonstrates how to import the Selenium webdriver, launch a Firefox browser instance, and navigate it to a specified URL. It also shows how to check the type of the browser object.
+
+SOURCE: https://automatetheboringstuff.com/3e/chapter13
+
+LANGUAGE: Python
+CODE:
+```
+from selenium import webdriver
+browser = webdriver.Firefox()
+browser.get('https://inventwithpython.com')
+```
+
+----------------------------------------
+
+TITLE: SQL Query Example for Cats
+DESCRIPTION: Illustrates a complex SQL query to retrieve specific data from a database. This example demonstrates finding cats based on multiple criteria like fur color, weight range, and birth date, showcasing the power of SQL over simple file searching.
+
+SOURCE: https://automatetheboringstuff.com/3e/chapter16
+
+LANGUAGE: SQL
+CODE:
+```
+SELECT fur_color FROM cats WHERE name = 'Zophie';
+SELECT fur_color FROM cats WHERE weight BETWEEN 3 AND 5 AND birth_date < '2023-10-01';
+```
+
+----------------------------------------
+
+TITLE: Python Math Operators: Integer Division Example
+DESCRIPTION: Provides an example of the integer division operator (//) in Python, calculating 22 divided by 8 and rounding down.
+
+SOURCE: https://automatetheboringstuff.com/3e/chapter1
+
+LANGUAGE: Python
+CODE:
+```
+22 // 8
+```
+
+----------------------------------------
+
+TITLE: Pillow Drawing Example
+DESCRIPTION: A complete Python example demonstrating how to create an image, draw various shapes (lines, rectangle, ellipse, polygon), and apply a loop for patterns using the Pillow library.
+
+SOURCE: https://automatetheboringstuff.com/3e/chapter21
+
+LANGUAGE: Python
+CODE:
+```
+from PIL import Image, ImageDraw
+im = Image.new('RGBA', (200, 200), 'white')
+draw = ImageDraw.Draw(im)
+draw.line([(0, 0), (199, 0), (199, 199), (0, 199), (0, 0)], fill='black')
+draw.rectangle((20, 30, 60, 60), fill='blue')
+draw.ellipse((120, 30, 160, 60), fill='red')
+draw.polygon(((57, 87), (79, 62), (94, 85), (120, 90), (103, 113)), fill='brown')
+for i in range(100, 200, 10):
+        draw.line([(i, 0), (200, i - 100)], fill='green')
+im.save('drawing.png')
+```
+
+----------------------------------------
+
+TITLE: Install pip on Fedora
+DESCRIPTION: Installs the pip package manager for Python 3 on Fedora Linux using the yum package manager.
+
+SOURCE: https://automatetheboringstuff.com/3e/appendixa
+
+LANGUAGE: Bash
+CODE:
+```
+sudo yum install python3-pip
+```
+
+----------------------------------------
+
+TITLE: Navigate to pip scripts directory on macOS
+DESCRIPTION: Changes the current directory in the macOS terminal to the 'bin' folder within the Python framework installation, where the pip executable is located.
+
+SOURCE: https://automatetheboringstuff.com/3e/appendixa
+
+LANGUAGE: Bash
+CODE:
+```
+cd /Library/Frameworks/Python.framework/Versions/3.13/bin/
+```
+
+----------------------------------------
+
+TITLE: Python Logging Setup
+DESCRIPTION: The logging module in Python allows for flexible tracking of program execution. To use logging, you must first import the module and then configure it to specify the desired logging level and output destination, such as a file.
+
+SOURCE: https://automatetheboringstuff.com/3e/chapter5
+
+LANGUAGE: Python
+CODE:
+```
+import logging
+logging.basicConfig(level=logging.DEBUG)
+```
+
+LANGUAGE: Python
+CODE:
+```
+import logging
+logging.basicConfig(filename='programLog.txt', level=logging.DEBUG)
+```
+
+----------------------------------------
+
+TITLE: Open File with Default Application (Windows)
+DESCRIPTION: This snippet demonstrates how to open a text file ('hello.txt') using the default application on Windows. It utilizes the `subprocess.run()` function with the 'start' command and `shell=True`.
+
+SOURCE: https://automatetheboringstuff.com/3e/chapter19
+
+LANGUAGE: Python
+CODE:
+```
+import subprocess
+
+# Create a hello.txt file.
+file_obj = open('hello.txt', 'w')
+file_obj.write('Hello, world!')
+file_obj.close()
+
+# Open hello.txt with the default application on Windows
+subprocess.run(['start', 'hello.txt'], shell=True)
+```
+
+----------------------------------------
+
+TITLE: Run ping command and capture output with subprocess.run
+DESCRIPTION: Shows how to execute the 'ping' command with specific arguments and capture its standard output as text. This is useful for analyzing the results of external commands within a Python script. The example uses platform-specific arguments for ping.
+
+SOURCE: https://automatetheboringstuff.com/3e/chapter19
+
+LANGUAGE: python
+CODE:
+```
+import subprocess
+proc = subprocess.run(['ping', '-n', '4', 'nostarch.com'], capture_output=True, text=True)
+print(proc.stdout)
+```
+
+----------------------------------------
+
+TITLE: Retrieving Data from shelve Module
+DESCRIPTION: Shows how to open an existing shelf file and retrieve data associated with a specific key. This example retrieves the list of cats previously saved.
+
+SOURCE: https://automatetheboringstuff.com/3e/chapter10
+
+LANGUAGE: Python
+CODE:
+```
+shelf_file = shelve.open('mydata')
+type(shelf_file) 
+shelf_file['cats']
+shelf_file.close()
+```
+
+----------------------------------------
+
+TITLE: Navigate to pip scripts directory on Windows
+DESCRIPTION: Changes the current directory in the Windows command prompt to the 'Scripts' folder where the pip executable is located for a specific Python installation.
+
+SOURCE: https://automatetheboringstuff.com/3e/appendixa
+
+LANGUAGE: Bash
+CODE:
+```
+cd C:\Users\**your_username**\AppData\Local\Programs\Python\Python313\Scripts
+```
+
+----------------------------------------
+
+TITLE: List Installed Packages in Virtual Environment
+DESCRIPTION: This command lists all packages installed within the currently active virtual environment. It's useful for verifying the isolated package set.
+
+SOURCE: https://automatetheboringstuff.com/3e/chapter12
+
+LANGUAGE: Shell
+CODE:
+```
+python -m pip list
+```
+
+----------------------------------------
+
+TITLE: Get and Set Window Size and Position
+DESCRIPTION: Demonstrates how to retrieve the current width and top-left position of an active window, and how to resize and move the window by setting these attributes. Requires the PyAutoGUI library.
+
+SOURCE: https://automatetheboringstuff.com/3e/chapter23
+
+LANGUAGE: Python
+CODE:
+```
+import pyautogui
+active_win = pyautogui.getActiveWindow()
+print(active_win.width)
+print(active_win.topleft)
+active_win.width = 1000
+active_win.topleft = (800, 400)
+```
+
+----------------------------------------
+
+TITLE: Python String join() Method Examples
+DESCRIPTION: Demonstrates the use of the `join()` method to concatenate strings from a list, with different separators.
+
+SOURCE: https://automatetheboringstuff.com/3e/chapter8
+
+LANGUAGE: Python
+CODE:
+```
+>>> ', '.join(['cats', 'rats', 'bats'])
+'cats, rats, bats'
+```
+
+LANGUAGE: Python
+CODE:
+```
+>>> ' '.join(['My', 'name', 'is', 'Simon'])
+'My name is Simon'
+```
+
+LANGUAGE: Python
+CODE:
+```
+>>> 'ABC'.join(['My', 'name', 'is', 'Simon'])
+'MyABCnameABCisABCSimon'
+```
+
+----------------------------------------
+
+TITLE: Launch Notepad with a File using subprocess.run
+DESCRIPTION: Demonstrates launching the Notepad application on Windows and opening a specific text file using `subprocess.run()`. The command and its arguments are passed as a list.
+
+SOURCE: https://automatetheboringstuff.com/3e/chapter19
+
+LANGUAGE: python
+CODE:
+```
+import subprocess
+subprocess.run(['C:\\Windows\\notepad.exe', 'C:\\Users\Al\\hello.txt'])
+```
+
+----------------------------------------
+
+TITLE: Python Math Operators: Modulus Example
+DESCRIPTION: Provides an example of the modulus operator (%) in Python, calculating the remainder of 22 divided by 8.
+
+SOURCE: https://automatetheboringstuff.com/3e/chapter1
+
+LANGUAGE: Python
+CODE:
+```
+22 % 8
+```
+
+----------------------------------------
+
+TITLE: Python Chessboard Starting Pieces
+DESCRIPTION: Defines the initial configuration of a chessboard using a Python dictionary. Keys represent squares ('a1' to 'h8'), and values represent pieces ('wR', 'bP', etc.). This dictionary is used to set up the board at the start of a game and can be copied for resets.
+
+SOURCE: https://automatetheboringstuff.com/3e/chapter7
+
+LANGUAGE: Python
+CODE:
+```
+import sys, copy
+
+STARTING_PIECES = {'a8': 'bR', 'b8': 'bN', 'c8': 'bB', 'd8': 'bQ',
+'e8': 'bK', 'f8': 'bB', 'g8': 'bN', 'h8': 'bR', 'a7': 'bP', 'b7': 'bP',
+'c7': 'bP', 'd7': 'bP', 'e7': 'bP', 'f7': 'bP', 'g7': 'bP', 'h7': 'bP',
+'a1': 'wR', 'b1': 'wN', 'c1': 'wB', 'd1': 'wQ', 'e1': 'wK', 'f1': 'wB',
+'g1': 'wN', 'h1': 'wR', 'a2': 'wP', 'b2': 'wP', 'c2': 'wP', 'd2': 'wP',
+'e2': 'wP', 'f2': 'wP', 'g2': 'wP', 'h2': 'wP'}
+```
+
+----------------------------------------
+
+TITLE: Receive ntfy Notifications via HTTP GET
+DESCRIPTION: This snippet demonstrates how to fetch notification messages from a specific ntfy topic using an HTTP GET request with the Requests library. It includes an example of polling for new messages and retrieving the raw text response.
+
+SOURCE: https://automatetheboringstuff.com/3e/chapter20
+
+LANGUAGE: Python
+CODE:
+```
+import requests
+resp = requests.get('https://ntfy.sh/AlSweigartZPgxBQ42/json?poll=1')
+print(resp.text)
+```
+
+----------------------------------------
+
+TITLE: Launch qBittorrent with a Torrent File (Python)
+DESCRIPTION: This Python code snippet demonstrates how to launch the qBittorrent application with a specific torrent file using the subprocess.Popen() function. It requires the full path to the qBittorrent executable and the torrent file name.
+
+SOURCE: https://automatetheboringstuff.com/3e/chapter20
+
+LANGUAGE: Python
+CODE:
+```
+qbProcess = subprocess.Popen(['C:\\Program Files (x86)\\qBittorrent\\\nqbittorrent.exe', 'shakespeare_complete_works.torrent'])
+```
+
+----------------------------------------
+
+TITLE: Windows Terminal Prompt Example
+DESCRIPTION: This code snippet shows the typical command prompt appearance on a Windows system, indicating the current directory and readiness for user commands.
+
+SOURCE: https://automatetheboringstuff.com/3e/chapter12
+
+LANGUAGE: shell
+CODE:
+```
+C:\Users\al> **your commands go here**
+```
+
+----------------------------------------
+
+TITLE: List Installed Packages with pip
+DESCRIPTION: Lists all installed Python packages and their corresponding version numbers. This command helps in managing dependencies and checking package versions.
+
+SOURCE: https://automatetheboringstuff.com/3e/chapter12
+
+LANGUAGE: Shell
+CODE:
+```
+C:\Users\al>\n**python -m pip list**
+```
+
+----------------------------------------
+
+TITLE: Complex Python Boolean Expression Example
+DESCRIPTION: Provides an example of a complex Python expression involving multiple boolean and comparison operators, demonstrating evaluation and order of operations.
+
+SOURCE: https://automatetheboringstuff.com/3e/chapter2
+
+LANGUAGE: Python
+CODE:
+```
+>>> spam = 4
+>>> 2 + 2 == spam and not 2 + 2 == (spam + 1) and 2 * 2 == 2 + 2
+True
+```
+
+----------------------------------------
+
+TITLE: Python: Save Speech to WAV File
+DESCRIPTION: This example shows how to use the save_to_file method of the pyttsx3 engine to generate speech from a given text and save it as a WAV audio file. The runAndWait method is crucial for file creation.
+
+SOURCE: https://automatetheboringstuff.com/3e/chapter24
+
+LANGUAGE: Python
+CODE:
+```
+import pyttsx3
+engine = pyttsx3.init()
+engine.save_to_file('Hello. How are you doing?', 'hello.wav')
+engine.runAndWait()  # The computer creates hello.wav.
+```
+
+----------------------------------------
+
+TITLE: Python datetime strftime() Formatting Examples
+DESCRIPTION: Demonstrates converting a Python datetime object to different string formats using the strftime() method with various directives.
+
+SOURCE: https://automatetheboringstuff.com/3e/chapter19
+
+LANGUAGE: Python
+CODE:
+```
+>>> import datetime
+>>> oct_21st = datetime.datetime(2026, 10, 21, 16, 29, 0)
+>>> oct_21st.strftime('%Y/%m/%d %H:%M:%S')
+'2026/10/21 16:29:00'
+```
+
+LANGUAGE: Python
+CODE:
+```
+>>> oct_21st.strftime('%I:%M %p')
+'04:29 PM'
+```
+
+LANGUAGE: Python
+CODE:
+```
+>>> oct_21st.strftime("%B of '%y")
+"October of '26"
+```
+
+----------------------------------------
+
+TITLE: Get and Control Window States (Maximized, Minimized, Active)
+DESCRIPTION: Shows how to check if a window is maximized, minimized, or active using boolean attributes. It also demonstrates how to maximize, restore, minimize, activate, and close the active window using PyAutoGUI methods. Includes a time delay for manual window activation.
+
+SOURCE: https://automatetheboringstuff.com/3e/chapter23
+
+LANGUAGE: Python
+CODE:
+```
+import pyautogui
+import time
+active_win = pyautogui.getActiveWindow()
+print(active_win.isMaximized)
+print(active_win.isMinimized)
+print(active_win.isActive)
+active_win.maximize()
+print(active_win.isMaximized)
+active_win.restore()
+active_win.minimize()
+time.sleep(5)
+active_win.activate()
+active_win.close()
+```
+
+----------------------------------------
+
+TITLE: Python String center() Method Examples
+DESCRIPTION: Illustrates centering strings within a specified width using the `center()` method, with default and custom fill characters.
+
+SOURCE: https://automatetheboringstuff.com/3e/chapter8
+
+LANGUAGE: Python
+CODE:
+```
+>>> 'Hello'.center(20)
+'       Hello        '
+```
+
+LANGUAGE: Python
+CODE:
+```
+>>> 'Hello'.center(20, '=')
+'=======Hello========'
+```
+
+----------------------------------------
+
+TITLE: Python SyntaxError Examples
+DESCRIPTION: Illustrates common syntax errors encountered in Python, specifically focusing on invalid mathematical expressions and unterminated string literals. These examples help identify and correct coding mistakes.
+
+SOURCE: https://automatetheboringstuff.com/3e/chapter1
+
+LANGUAGE: Python
+CODE:
+```
+>>> **5 +**
+  File "<python-input-0>", line 1
+    5 +
+      ^
+SyntaxError: invalid syntax
+>>> **42 + 5 + * 2**
+  File "<python-input-0>", line 1
+    42 + 5 + * 2
+            ^
+SyntaxError: invalid syntax
+>>> **'Hello, world!**
+SyntaxError: unterminated string literal (detected at line 1)
+```
+
+----------------------------------------
+
+TITLE: Get and Update All Rows with ezsheets
+DESCRIPTION: Explains how to retrieve all rows from a Google Sheet as a list of lists and subsequently update them using ezsheets. The example demonstrates modifying specific cells within the retrieved data structure and then applying these changes back to the online spreadsheet.
+
+SOURCE: https://automatetheboringstuff.com/3e/chapter15
+
+LANGUAGE: Python
+CODE:
+```
+rows = sheet.getRows()  # Get every row in the spreadsheet.
+print(rows[0])  # Examine the values in the first row.
+print(rows[1])
+rows[1][0] = 'PUMPKIN'  # Change the produce name.
+print(rows[1])
+print(rows[10])
+rows[10][2] = '400'  # Change the pounds sold.
+rows[10][3] = '904'  # Change the total.
+print(rows[10])
+sheet.updateRows(rows)  # Update the online spreadsheet with the changes.
+```
+
+----------------------------------------
+
+TITLE: Python 'and' Operator Examples
+DESCRIPTION: Demonstrates the 'and' boolean operator in Python, which evaluates to True only if both operands are True. Includes examples showing different combinations of True and False.
+
+SOURCE: https://automatetheboringstuff.com/3e/chapter2
+
+LANGUAGE: Python
+CODE:
+```
+>>> True and True
+True
+>>> True and False
+False
+```
+
+----------------------------------------
+
+TITLE: Ubuntu Linux Terminal Prompt Example
+DESCRIPTION: This code snippet demonstrates the prompt format on an Ubuntu Linux terminal, including the username, hostname, current directory, and the command prompt symbol.
+
+SOURCE: https://automatetheboringstuff.com/3e/chapter12
+
+LANGUAGE: shell
+CODE:
+```
+al@al-VirtualBox:~$ **your commands go here**
+```
+
+----------------------------------------
+
+TITLE: Snowstorm Animation Setup (Python)
+DESCRIPTION: Initializes constants for a text-based snowstorm animation in Python. It defines characters for top, bottom, and full blocks using their Unicode values.
+
+SOURCE: https://automatetheboringstuff.com/3e/chapter12
+
+LANGUAGE: Python
+CODE:
+```
+import os, random, time, sys
+
+TOP    = chr(9600)  # Character 9600 is '▀'
+BOTTOM = chr(9604)  # Character 9604 is '▄'
+FULL   = chr(9608)  # Character 9608 is '█'
+```
+
+----------------------------------------
+
+TITLE: Get Screen Resolution with PyAutoGUI
+DESCRIPTION: This snippet demonstrates how to import the PyAutoGUI library and use the `pyautogui.size()` function to retrieve the screen's width and height. It shows how to access these dimensions as a named tuple, by index, and by attribute name.
+
+SOURCE: https://automatetheboringstuff.com/3e/chapter23
+
+LANGUAGE: Python
+CODE:
+```
+import pyautogui
+screen_size = pyautogui.size()  # Obtain the screen resolution.
+screen_size
+screen_size[0], screen_size[1]
+screen_size.width, screen_size.height
+tuple(screen_size)
+```
+
+----------------------------------------
+
+TITLE: Basic HTML Bold Element
+DESCRIPTION: An example of a simple HTML structure demonstrating how to make text bold using the <b> tag.
+
+SOURCE: https://automatetheboringstuff.com/3e/chapter13
+
+LANGUAGE: HTML
+CODE:
+```
+<b>Hello</b>, world!
+```
+
+----------------------------------------
+
+TITLE: Python 'or' Operator Examples
+DESCRIPTION: Illustrates the 'or' boolean operator in Python, which evaluates to True if at least one of the operands is True. Shows examples with various True and False combinations.
+
+SOURCE: https://automatetheboringstuff.com/3e/chapter2
+
+LANGUAGE: Python
+CODE:
+```
+>>> False or True
+True
+>>> False or False
+False
+```
+
+----------------------------------------
+
+TITLE: Python Function Call Stack Demonstration
+DESCRIPTION: This Python code defines four functions (a, b, c, d) where 'a' calls 'b' and 'd', and 'b' calls 'c'. It demonstrates the order of execution and return values based on the call stack principle. The output shows the sequence of function starts and returns.
+
+SOURCE: https://automatetheboringstuff.com/3e/chapter4
+
+LANGUAGE: Python
+CODE:
+```
+def a():
+    print('a() starts')
+    b()
+    d()
+    print('a() returns')
+
+def b():
+    print('b() starts')
+    c()
+    print('b() returns')
+
+def c():
+    print('c() starts')
+    print('c() returns')
+
+def d():
+    print('d() starts')
+    print('d() returns')
+
+a()
+```
+
+----------------------------------------
+
+TITLE: Regex Substitution Example in Python
+DESCRIPTION: Demonstrates the use of the sub() method from Python's 're' module to replace all occurrences of a pattern in a string. This example replaces all sequences of one or more digits with the character 'X'.
+
+SOURCE: https://automatetheboringstuff.com/3e/chapter9
+
+LANGUAGE: Python
+CODE:
+```
+import re
+
+num_re = re.compile(r'\d+')
+text = '12 drummers, 11 pipers, five rings, 3 hens'
+result = num_re.sub('X', text)
+
+# print(result)
+# Expected output: 'X drummers, X pipers, five rings, X hens'
+```
+
+----------------------------------------
+
+TITLE: Python: Generate Speech Output
+DESCRIPTION: This snippet demonstrates how to initialize the pyttsx3 engine, make it speak a given text, and then respond to user input by speaking a personalized message. It requires the pyttsx3 library.
+
+SOURCE: https://automatetheboringstuff.com/3e/chapter24
+
+LANGUAGE: Python
+CODE:
+```
+import pyttsx3
+engine = pyttsx3.init()
+engine.say('Hello. How are you doing?')
+engine.runAndWait()  # The computer speaks.
+feeling = input('>')
+engine.say('Yes. I am feeling ' + feeling + ' as well.')
+engine.runAndWait()  # The computer speaks again.
+```
+
+----------------------------------------
+
+TITLE: Create and Write to a ZIP File
+DESCRIPTION: This snippet demonstrates how to create a new ZIP file ('example.zip') and add a text file ('file1.txt') to it with DEFLATE compression. It first creates 'file1.txt' with sample content and then compresses it into the ZIP archive. The `compresslevel` argument controls the compression ratio.
+
+SOURCE: https://automatetheboringstuff.com/3e/chapter11
+
+LANGUAGE: Python
+CODE:
+```
+import zipfile
+with open('file1.txt', 'w', encoding='utf-8') as file_obj:
+    file_obj.write('Hello' * 10000)
+
+with zipfile.ZipFile('example.zip', 'w') as example_zip:
+    example_zip.write('file1.txt', compress_type=zipfile.ZIP_DEFLATED,
+        compresslevel=9)
+```
+
+----------------------------------------
+
+TITLE: Get Active Window and its Properties (Python)
+DESCRIPTION: This snippet demonstrates how to import the pyautogui library, get the currently active window object, and then access its title, size, and positional attributes. It also shows how to use these attributes to perform actions like clicking within the window.
+
+SOURCE: https://automatetheboringstuff.com/3e/chapter23
+
+LANGUAGE: Python
+CODE:
+```
+import pyautogui
+
+active_win = pyautogui.getActiveWindow()
+
+# Print the window object
+print(active_win)
+
+# Print the string representation of the window object
+print(str(active_win))
+
+# Get and print the window's title
+print(active_win.title)
+
+# Get and print the window's size
+print(active_win.size)
+
+# Get and print the window's coordinates
+print(active_win.left, active_win.top, active_win.right, active_win.bottom)
+
+# Get and print the window's top-left corner coordinates
+print(active_win.topleft)
+
+# Click 10 pixels right and 20 pixels down from the top-left corner
+pyautogui.click(active_win.left + 10, active_win.top + 20)
+```
+
+----------------------------------------
+
+TITLE: Python bool() Function Example
+DESCRIPTION: Demonstrates the use of the built-in bool() function in Python to explicitly check if a value is truthy or falsey. This interactive shell example shows the boolean conversion for integers, strings, and empty strings.
+
+SOURCE: https://automatetheboringstuff.com/3e/chapter3
+
+LANGUAGE: python
+CODE:
+```
+>>> bool(0)
+False
+>>> bool(42)
+True
+>>> bool('Hello')
+True
+>>> bool('')
+False
+```
+
+----------------------------------------
+
+TITLE: Python String strip(), lstrip(), and rstrip() Examples
+DESCRIPTION: Shows how to remove leading/trailing whitespace or specified characters using `strip()`, `lstrip()`, and `rstrip()`.
+
+SOURCE: https://automatetheboringstuff.com/3e/chapter8
+
+LANGUAGE: Python
+CODE:
+```
+>>> spam = '    Hello, World    '
+>>> spam.strip()
+'Hello, World'
+```
+
+LANGUAGE: Python
+CODE:
+```
+>>> spam.lstrip()
+'Hello, World    '
+```
+
+LANGUAGE: Python
+CODE:
+```
+>>> spam.rstrip()
+'    Hello, World'
+```
+
+LANGUAGE: Python
+CODE:
+```
+>>> spam = 'SpamSpamBaconSpamEggsSpamSpam'
+>>> spam.strip('ampS')
+'BaconSpamEggs'
+```
+
+----------------------------------------
+
+TITLE: Python: Check for Attached Drive Existence
+DESCRIPTION: Demonstrates checking for the existence of a drive (e.g., a flash drive) using `pathlib.Path.exists()`. This example checks for 'D:/'.
+
+SOURCE: https://automatetheboringstuff.com/3e/chapter10
+
+LANGUAGE: Python
+CODE:
+```
+from pathlib import Path
+d_drive = Path('D:/')
+print(d_drive.exists())
+```
+
+----------------------------------------
+
+TITLE: Commit SQLite Transaction in Python
+DESCRIPTION: Illustrates how to insert data into an SQLite database and commit the transaction using Python's sqlite3 module. This makes the changes permanent. The example shows starting a transaction with 'BEGIN', executing INSERT statements, and then using 'conn.commit()' to save the changes. It verifies that the inserted records are present in the database.
+
+SOURCE: https://automatetheboringstuff.com/3e/chapter16
+
+LANGUAGE: Python
+CODE:
+```
+import sqlite3
+conn = sqlite3.connect('sweigartcats.db', isolation_level=None)
+conn.execute('BEGIN')
+conn.execute('INSERT INTO cats VALUES ("Socks", "2022-04-04", "white", 4.2)')
+conn.execute('INSERT INTO cats VALUES ("Fluffy", "2022-10-30", "gray", 4.5)')
+conn.commit()
+conn.execute('SELECT * FROM cats WHERE name = "Socks"').fetchall()
+conn.execute('SELECT * FROM cats WHERE name = "Fluffy"').fetchall()
+```
+
+----------------------------------------
+
+TITLE: macOS Terminal Prompt Example
+DESCRIPTION: This code snippet illustrates the prompt structure in a macOS terminal, displaying the username, computer name, current directory (using '~' for home), and the command prompt symbol.
+
+SOURCE: https://automatetheboringstuff.com/3e/chapter12
+
+LANGUAGE: shell
+CODE:
+```
+al@Als-MacBook-Pro ~ % **your commands go here**
+```
+
+----------------------------------------
+
+TITLE: SQLite Documentation
+DESCRIPTION: Links to the official online documentation for SQLite. This resource provides comprehensive information on SQLite's features, syntax, and best practices for database management.
+
+SOURCE: https://automatetheboringstuff.com/3e/chapter16
+
+LANGUAGE: URL
+CODE:
+```
+https://sqlite.org/docs.html
+```
+
+----------------------------------------
+
+TITLE: Python Indented Code Blocks Example
+DESCRIPTION: Demonstrates how Python uses indentation to define code blocks. Nested blocks are shown, illustrating the rules for block beginnings and endings based on indentation levels.
+
+SOURCE: https://automatetheboringstuff.com/3e/chapter2
+
+LANGUAGE: Python
+CODE:
+```
+username = 'Mary'
+password = 'swordfish'
+if username == 'Mary':
+  print('Hello, Mary')
+    if password == 'swordfish':
+      print('Access granted.')
+    else:
+      print('Wrong password.')
+```
+
+----------------------------------------
+
+TITLE: Python Comment Example
+DESCRIPTION: Demonstrates how to use comments in Python. Comments are ignored by the Python interpreter and are used for explaining code or temporarily disabling lines of code.
+
+SOURCE: https://automatetheboringstuff.com/3e/chapter1
+
+LANGUAGE: Python
+CODE:
+```
+# This program says hello and asks for my name.
+
+```
+
+----------------------------------------
+
+TITLE: Run NAPS2 on Linux
+DESCRIPTION: This command demonstrates how to launch the NAPS2 application on a Linux system after it has been installed via Flatpak. It is used to access the NAPS2 functionality from the terminal.
+
+SOURCE: https://automatetheboringstuff.com/3e/chapter22
+
+LANGUAGE: Shell
+CODE:
+```
+flatpak run com.naps2.Naps2
+```
+
+----------------------------------------
+
+TITLE: Create and Inspect timedelta Objects in Python
+DESCRIPTION: Demonstrates creating a `timedelta` object with specific days, hours, minutes, and seconds. It shows how to access the `days`, `seconds`, and `microseconds` attributes, and how to get the total duration in seconds using `total_seconds()`. Finally, it illustrates converting the `timedelta` object to a human-readable string.
+
+SOURCE: https://automatetheboringstuff.com/3e/chapter19
+
+LANGUAGE: Python
+CODE:
+```
+import datetime
+delta = datetime.timedelta(days=11, hours=10, minutes=9, seconds=8)
+print(delta.days, delta.seconds, delta.microseconds)
+print(delta.total_seconds())
+print(str(delta))
+```
+
+----------------------------------------
+
+TITLE: Python Math Expression Evaluation
+DESCRIPTION: Demonstrates the evaluation of various mathematical expressions in Python, showcasing operator precedence and the use of parentheses. Includes examples of addition, multiplication, exponentiation, division, floor division, and modulo operations.
+
+SOURCE: https://automatetheboringstuff.com/3e/chapter1
+
+LANGUAGE: Python
+CODE:
+```
+>>> **2 + 3 * 6**
+20
+>>> **(2 + 3) * 6**
+30
+>>> **48565878 * 578453**
+28093077826734
+>>> **2 ** 8**
+256
+>>> **23 / 7**
+3.2857142857142856
+>>> **23 // 7**
+3
+>>> **23 % 7**
+2
+>>> **2    +          2**
+4
+>>> **(5 - 1) * ((7 + 1) / (3 - 1))**
+16.0
+```
