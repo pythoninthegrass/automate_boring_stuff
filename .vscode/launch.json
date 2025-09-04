@@ -1,0 +1,18 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Python: Current File",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${file}",
+      "console": "integratedTerminal",
+      "cwd": "${fileDirname}",
+      "pythonArgs": ["-Xfrozen_modules=off"],
+      "env": {
+        "PYDEVD_DISABLE_FILE_VALIDATION": "1"
+      }
+      // "args": ["-i", "response.xml", "-o", "response.csv"],
+    }
+  ]
+}
