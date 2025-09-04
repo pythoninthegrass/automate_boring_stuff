@@ -1,5 +1,5 @@
 # ETC
-
+.serena/
 
 # General
 .DS_Store
@@ -188,3 +188,4 @@ static
 # INCLUDE
 !**/.gitkeep
 !**/*.example
+!**/llms.txt
